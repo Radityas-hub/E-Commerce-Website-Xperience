@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="./assets/logo.svg" />
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<title>Beranda - Xperience</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=nqGwKBynQpc5ew_--bHCMIrZAqFo6xNG3MGL0PvRchaf5DiNyth6J0GxbIjbYEi8RkFuhYj0XXdnRAI_ks5JOw" charset="UTF-8"></script></head>
+
+<body>
+
+	<!-- loader -->
+	<div id="loader" class="loading-loader hidden">
+		<div class="load">
+			<div class="spinner"></div>
+		</div>
+	</div>
+<!-- loader end -->
+
+
+	<button id="chatButton" type="button" class="chat-button">
+		<img id="buttonChatIcons" class="icon" src="assets/chat.svg" alt="">
+	</button>
+	
+	<div id="chatContent" class="chat-content hidden">
+		<div class="full-chat-block">
+			<div class="bars">
+				<div class="profile">
+					<img src="assets/bot-profile.svg" alt="">
+					<div class="text">
+						<h1>Virtual Asisstant</h1>
+						<span>Online</span>
+					</div>
+				</div>
+				<button class="close-button hidden" id="closeButtonChat">
+					<i class='bx bx-x'></i>
+				</button>
+			</div>
+			<!-- Message Container -->
+			<div class="outer-container">
+				<div class="chat-container">
+					<!-- Messages -->
+					<div id="chatbox">
+						<p id="botStarterMessage" class="botText"></p>
+					</div>
+	
+					<!-- User input box -->
+					<div class="chat-bar-input-block">
+						<div id="userInput">
+							<input id="chatInput" class="input-box" type="text" name="msg"
+								placeholder='"Enter" Untuk Masukkan Pesan...'>
+							<p></p>
+						</div>
+	
+						<div class="chat-bars-icons">
+							<i id="sendIcon" class=' bx bxl-telegram' onclick="sendButton()"></i>
+						</div>
+					</div>
+	
+					<div id="chatBars">
+						<p></p>
+					</div>
+	
+				</div>
+			</div>
+	
+		</div>
+	</div>
+	
+	<!-- navbar -->
+	<div class="header">
+		<div class="container">
+
+			<div class="left">
+
+				<div class="logo">X<span>perience</span></div>
+				<!-- <div class="logo"><img src="./assets/x.svg" alt=""><span>perience</span></div> -->
+
+				<ul class="navbar">
+					<li><a href="#hero-section" class="nav-link active">Beranda<span></span></a></li>
+					<li><a href="#about-section" class="nav-link ">Tentang<span></span></a></li>
+					<li><a href="#product-section" class="nav-link ">Produk<span></span></a></li>
+					<li><a href="#faq-section" class="nav-link ">FAQ<span></span></a></li>
+					<li><a href="#contact-section" class="nav-link ">Kontak<span></span></a></li>
+					<li class="wrapper-button">
+						<a href="../pages/cart/cart.html">
+							<div class="button cart-button-menu"><i class='bx bxs-cart'></i></div>
+						</a>
+						<div class="button button1">
+							<a href="./pages/login/login.html?show=register" target="_blank">Daftar</a>
+						</div>
+						<div class="button button2">
+							<a href="./pages/login/login.html?show=login" target="_blank">Masuk</a>
+						</div>
+					</li>
+				</ul>
+
+				<i class="bx bx-menu" id="menu-icon"></i>
+
+				<ul class="navbar-sticky-responsive">
+					<li><a href="#hero-section" class="nav-link active">Beranda<span></span></a></li>
+					<li><a href="#about-section" class="nav-link ">Tentang<span></span></a></li>
+					<li><a href="#product-section" class="nav-link ">Produk<span></span></a></li>
+					<li><a href="#faq-section" class="nav-link ">FAQ<span></span></a></li>
+					<li><a href="#contact-section" class="nav-link ">Kontak<span></span></a></li>
+				</ul>
+			</div>
+
+			<div class="right">
+				<a href="./pages/product/product.html">
+					<div class="cart-button sticky-cart"><i class='bx bxs-cart'></i></div>
+				</a>
+				<div class="button sticky-log">
+					<a href="./pages/login/login.html" target="_blank">Daftar</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- hero banner -->
+	<section class="hero" id="hero-section">
+		<div class="container">
+			<div class="blurry-blobs">
+				<img src="./assets/bbblurry.svg" alt="">
+			</div>
+			<div class="left">
+				<div class="textbox">
+					<h1>Tempat Berkumpulnya Gadget Next-Gen!</h1>
+					<p>Selamat datang di toko gadget masa depan kami! Temukan teknologi terkini dengan produk inovatif kami. Mulai eksplorasi
+					Anda sekarang!</p>
+					<div class="button">
+						<a href="#about-section">Jelajahi</a>
+					</div>
+					<div class="blurry-blobs">
+						<img src="./assets/bbblurry.svg" alt="">
+					</div>
+				</div>
+				<div class="sponsor">
+					<p>Disponsori lebih dari 200+ perusahaan</p>
+					<div class="wrapper">
+						<img src="assets/visa.png" alt="">
+						<img src="assets/paypal.png" alt="">
+						<img src="assets/bitpay.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<img class="radial" src="assets/radial.png" alt="">
+				<div class="img-box">
+					<img src="assets/PC & Console VR Headsets Standalone VR Headsets Other Virtual Reality Accs 4.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- about us -->
+	<section class="about section" id="about-section">
+		<div class="container">
+			<div class="left">
+				<img src="assets/about-us.png" alt="">
+			</div>
+			<div class="right">
+				<div class="top">
+					<h1>Temukan Gadget Terbaik</h1>
+					<p>Kami adalah pilihan utama bagi mereka yang mencari produk terkini, teknologi canggih, dan pengalaman belanja online yang
+					memikat.</p>
+				</div>
+				<div class="bot">
+					<div class="box">
+						<h1>2K<span class="plus">+</span></h1>
+						<p>Produk <br> Premium</p>
+					</div>
+					<div class="box">
+						<h1>200<span class="plus">+</span></h1>
+						<p>Cabang <br> Toko</p>
+					</div>
+					<div class="box">
+						<h1>500K<span class="plus">+</span></h1>
+						<p>Pelanggan <br> Senang</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- product showcast -->
+	<section class="product-showcase section" id="product-section">
+		<div class="title-section">
+			<h1>Produk Terbaik Kami</h1>
+			<p>Tidak perlu mahal untuk mendapatkan barang berkualitas</p>
+		</div>
+
+		<div class="main">
+			<div class="primary-box">
+				<div class="box ">
+					<div class="top">
+						<div class="content">
+							<h1>Virtual Reality</h1>
+							<p>Cara Baru Untuk Melihat Dunia</p>
+							<button>
+								<a href="./pages/product/product.html">Produk <i class='bx bx-chevron-right'></i></a>
+							</button>
+						</div>
+					</div>
+					<div class="bot">
+						<img src="assets/VR.svg" alt="">
+					</div>
+					<img class="radial" src="assets/radial.png" alt="">
+				</div>
+			</div>
+			<div class="wrapper-box">
+				<div class="box">
+					<div class="top">
+						<div class="content">
+							<h1>Smart Watch</h1>
+							<p>Kemampuan menakjubkan terjangkau.</p>
+							<button>
+								<a href="./pages/product/product.html">Produk <i class='bx bx-chevron-right'></i></a>
+							</button>
+						</div>
+					</div>
+					<div class="bot">
+						<img src="assets/Watch.svg" alt="">
+						<img class="mobile-img" src="assets/watch-mobile.svg" alt="">
+					</div>
+				</div>
+				<div class="box">
+					<div class="top">
+						<div class="content">
+							<h1>Smart Phone</h1>
+							<p>Semua dalam genggaman</p>
+							<button>
+								<a href="./pages/product/product.html">Produk <i class='bx bx-chevron-right'></i></a>
+							</button>
+						</div>
+					</div>
+					<div class="bot">
+						<img src="assets/Handphone.svg" alt="">
+						<img class="mobile-img" src="assets/handphone-mobile.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	
+	<section id="faq-section">
+	<section class="faq-section section">
+		<div class="container">
+			<div class="left">
+				<h1>FAQ</h1>
+				<p>Pertanyaan - pertanyaan yang sering ditanyakan mengenai produk kami</p>
+				<div class="faq-dropdown-container">
+					<ul class="accordion">
+						<li>
+							<input type="radio" name="accordion" id="first">
+							<label for="first">Apakah VR bisa digunakan untuk bermain game ?</label>
+							<div class="content">Ya, VR dapat digunakan untuk bermain game dengan pengalaman immersive yang memungkinkan pemain merasakan dunia dalam
+							permainan.</div>
+						</li>
+						<li>
+							<input type="radio" name="accordion" id="two">
+							<label for="two">Apakah VR dapat merusak mata ?</label>
+							<div class="content">VR tidak secara langsung merusak mata, tetapi pengguna yang berlebihan atau tidak hati-hati dapat mengalami
+							ketidaknyamanan atau gangguan mata sementara.</div>
+						</li>
+						<li>
+							<input type="radio" name="accordion" id="third">
+							<label for="third">Kenapa VR bisa begitu mahal ?</label>
+							<div class="content">Harga VR tinggi karena teknologi canggih, perangkat keras, dan pengembangan konten yang memerlukan investasi besar dalam
+							penelitian dan produksi.</div>
+						</li>
+						<li>
+							<input type="radio" name="accordion" id="four">
+							<label for="four">Apakah terdapat garansi ?</label>
+							<div class="content">Ya, terdapat garansi selama 3 tahun yang mencakup kerusakan dan masalah
+							manufaktur.</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+				<img src="./assets/bbblurry.svg" alt="" class="faq-blur">
+				<img src="./assets/faq-images.png" alt="">
+			</div>
+		</div>
+	</section>
+
+
+	<!-- product launching -->
+	<section class="product-launching section">
+		<div class="card">
+			<div class="right">
+				<div class="text-box">
+					<h2>Produk Terbaru Kami.</h2>
+					<h1>Apple Vision Pro</h1>
+					<p>Nikmati hiburan, foto, video, dan koneksi dengan cara baru.</p>
+				</div>
+				<div class="countdown">
+					<div class="box">
+						<span class="time" id="days">00</span>
+						<p>Day</p>
+					</div>
+					<div class="box">
+						<span class="time" id="hours">00</span>
+						<p>Hours</p>
+					</div>
+					<div class="box">
+						<span class="time" id="minutes">00</span>
+						<p>Minutes</p>
+					</div>
+					<div class="box">
+						<span class="time" id="seconds">00</span>
+						<p>Seconds</p>
+					</div>
+				</div>
+				<div class="button disabled">
+					<span>Segera Hadir</span>
+				</div>
+			</div>
+			<img class="gradient" src="assets/gradient.svg" alt="">
+			<div class="left">
+				<img class="primary"
+					src="assets/PC & Console VR Headsets Standalone VR Headsets Other Virtual Reality Accs 1.svg" alt="">
+			</div>
+		</div>
+	</section>
+
+
+	<section class="testimonial-section section">
+		<div class="container">
+			<div class="left">
+				<img src="./assets/testimoni-img.png" alt="">
+			</div>
+			<div class="right">
+				<p class="testimonial-subtitle">Apa Kata Mereka</p>
+				<p class="testimonial-title">Testimoni Dari Pelanggan Kami</p>
+				<div class="wrapper">
+					<i id="left" class="bx bx-chevron-left"></i>
+					<ul class="carousel">
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>							
+							</div>
+						</li>
+						<li class="card">
+							<div class="slider-text-content">
+								<img src="./assets/kutip.png" alt="" class="testimonial-img">
+								<p>Pelayanan nya sangat memuaskan, produk nya pun berkualitas dan beragam, sip next belanja disini lagi</p>
+								<div class="testimonial-name">Lara Radiva</div>
+							</div>
+						</li>
+					</ul>
+					<i id="right" class="bx bx-chevron-right"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+	</section>
+
+	<section id="contact-section">
+	<section class="cta section">
+		<div class="card">
+			<img src="./assets/cta-rectangle.png" alt="">
+			<img src="./assets/cta-segitiga.png" alt="">
+			<img src="./assets/cta-lingkaran.png" alt="">
+			<img src="./assets/cta-persegi.png" alt="">
+			<img src="./assets/cta-images.png" alt="" class="cta-bg-img">
+			<div class="text-box">
+				<h1>Langganan Dengan Kami</h1>
+				<p>Berlangganan dan cari tahu tentang produk terbaru kami, dan lainnya.</p>
+				<button>
+					<span>Berlangganan</span>
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact section">
+		<div class="card">
+			<div class="right">
+				<form>
+					<h1>Contact.</h1>
+					<label>Name</label>
+					<div class="input">
+						<img src="assets/user-smile-line.svg" alt="">
+						<input type="text" placeholder="Name">
+					</div>
+					<label>Email</label>
+					<div class="input">
+						<img src="assets/mail-line.svg" alt="">
+						<input type="email" placeholder="Email">
+					</div>
+					<label>Massage</label>
+					<textarea placeholder="Text..."></textarea>
+					<button><span>Send</span></button>
+				</form>
+			</div>
+			<div class="left">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.6788768485317!2d115.1792719747103!3d-8.62679498768293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd238b443f3470b%3A0xed54cf03e1904bf3!2sSMK%20TI%20Bali%20Global%20Badung!5e0!3m2!1sid!2sid!4v1693471164864!5m2!1sid!2sid"
+					width="100%" height="100%" style="border:0;" allowfullscreen="" 
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<div class="contact-box">
+					<div class="text">
+						<i class='bx bxs-envelope'></i>
+						<p>hello@xperience.idn</p>
+					</div>
+					<div class="text">
+						<i class='bx bxs-phone-call'></i>
+						<p>0881-0371-2335</p>
+					</div>
+					<div class="text">
+						<i class='bx bxs-map'></i>
+						<p>Jl. Tibung Sari, Badung</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</section>
+
+	<section class="footer-section ">
+		<div class="footer-container">
+			<div class="footer-content">
+				<p class="website-name">Xperience.</p>
+				<p class="footer-text">Dapatkan update produk terbaru dari kami.</p>
+				<div class="subs-field">
+					<input type="email" placeholder="Email" id="email" name="email" required>
+					<div class="subs-btn" id="subsBtn">
+					<i id="right" class="bx bx-chevron-right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Tentang</p>
+				<div class="footer-links">
+					<a href="#">
+						<p>Beranda</p>
+					</a>
+					<a href="#about-section">
+						<p>Tentang</p>
+					</a>
+					<a href="#product-section">
+						<p>Produk</p>
+					</a>
+					<a href="#faq-section">
+						<p>FAQ</p>
+					</a>
+					<a href="#contact-section">
+						<p>Kontak</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Halaman Detail</p>
+				<div class="footer-links">
+					<a href="#">
+						<p>Beranda</p>
+					</a>
+					<a href="./pages/product/product.html">
+						<p>Belanja</p>
+					</a>
+					<a href="./pages/cart/cart.html">
+						<p>Keranjang</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Kontak</p>
+				<div class="footer-links">
+					<a href="mailto:halo@mediaku.idn">
+						<p>halo@xperience.idn</p>
+					</a>
+					<p>+62 813 4482 9209</p>
+					<p>Jln. Gajah Mada, Bandung</p>
+				</div>
+			</div>
+		</div>
+		<p class="copyright"
+			style="position:absolute;bottom:20px;left: 0;width: 100%;text-align: center;opacity: 0.8;color: white;font-weight: 500;font-size: 14px;">
+			Copyright © <span>Xperience</span> | Designed by <span>Bocah TI.</span></p>
+	</section>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+<script src="./js/chat.js"></script>
+</html>

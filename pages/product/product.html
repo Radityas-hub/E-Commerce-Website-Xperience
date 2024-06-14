@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="shortcut icon" href="../../assets/logo.svg" />
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet" href="product.css">
+	<title>Produk - Xperience</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jCFhGgIWBSeuOzprvPQ8Jz7p7EksdtEtz68eF0T7lDDg95Z9UnlhE9gByfq3PeXn6UxaAFFGZVihoNL0yXkRCP0ZKAwUsNgVST6TMRkLXAI" charset="UTF-8"></script></head>
+
+<body>
+	<!-- loader -->
+	<div id="loader" class="loading-loader hidden">
+		<div class="load">
+			<div class="spinner"></div>
+		</div>
+	</div>
+<!-- loader end -->
+
+
+	<!-- navbar -->
+	<nav class="header">
+		<div class="container">
+
+			<h1 class="logo">X<span>perience</span></h1>
+
+			<ul class="navbar">
+				<li><a href="../../index.html" class="nav-link ">Home</a></li>
+				<li><a href="#" class="nav-link active">Product <span></span></a></li>
+				<li><a href="../cart/cart.html" class="nav-link">Cart</a></li>
+				<li class="wrapper-button">
+					<a href="../pages/cart/cart.html">
+						<div class="button cart-button-menu"><i class='bx bxs-cart'></i></div>
+					</a>
+					<a href="../pages/login/login.html?show=register">
+						<div class="button button1">
+							Daftar
+						</div>
+					</a>
+					<a href="../pages/login/login.html?show=login">
+						<div class="button button2">
+							Masuk
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<i class="bx bx-menu" id="menu-icon"></i>
+
+			<div class="wrapper-button-primary">
+				<a href="../cart/cart.html">
+					<div class="cart-button sticky-cart"><i class='bx bxs-cart'></i></div>
+				</a>
+				<a href="../login/login.html?show=register">
+					<div class="button sticky-log">
+						Daftar
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</nav>
+<!-- navbar end -->
+
+
+	<section class="hero">
+		<div class="hero-container">
+			<div class="hero-banner">
+
+				<div class="hero-left-section">
+					<div class="hero-title">gaya modern <br> performa unggul</div>
+					<div class="product-counter">
+						<div class="left-counter">
+							<p class="number">2K +</p>
+							<p class="hero-desc">Produk</p>
+						</div>
+						<div class="right-counter">
+							<p class="number">500K +</p>
+							<p class="hero-desc">Pelanggan</p>
+						</div>
+					</div>
+
+					<div class="hero-search-box">
+						<input type="text" class="search-input" id="searchInput" autocapitalize="sentences" placeholder="Apa yang kamu cari ?">
+						<button class="search-btn" id="searchButton">
+							<img src="../../assets/Search.svg" alt="">
+						</button>
+					</div>
+
+					<div class="product-on-search-wrapper">
+						<div class="product-on-search-container" id="searchBarProducts"></div>
+					</div>
+
+					</div>
+
+				<div class="hero-right-section">
+					<img src="../../assets/product-banner.png" alt="">
+				</div>
+			</div>
+
+			<div class="reason-section">
+				<div class="reason-box">
+					<img src="../../assets/delivery.svg" alt="" class="reason-img">
+					<div class="reason-text">
+						<p class="reason-title">Pengiriman Cepat</p>
+						<p class="reason-desc">Pengiriman 24/H</p>
+					</div>
+				</div>
+				<div class="reason-box">
+					<img src="../../assets/return.svg" class="reason-img">
+					<div class="reason-text">
+						<p class="reason-title">24 Jam Pengembalian</p>
+						<p class="reason-desc">Dijamin 100% uang kembali</p>
+					</div>
+				</div>
+				<div class="reason-box">
+					<img src="../../assets/payment.svg" alt="" class="reason-img">
+					<div class="reason-text">
+						<p class="reason-title">Keamanan Pembayaran</p>
+						<p class="reason-desc">Uang anda aman</p>
+					</div>
+				</div>
+				<div class="reason-box">
+					<img src="../../assets/support.svg" alt="" class="reason-img">
+					<div class="reason-text">
+						<p class="reason-title">Layanan 24/7</p>
+						<p class="reason-desc">kontak langsung/pesan</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="product" id="products">
+		<div class="container">
+			<div class="product-left-container">
+				<div class="product-box">
+					<button class="product-primary-box" id="productPrimary">
+						<p>Kategori</p>
+						<img src="../../assets/shopping-bag.png" alt="">
+					</button>
+					<button class="product-side-box" id="phoneFilter">
+						<p>SmartPhone</p>
+						<img src="../../assets/hp-1.png" alt="">
+					</button>
+					<button class="product-side-box" id="watchFilter">
+						<p>SmartWatch</p>
+						<img src="../../assets/smartwatch-0.png" alt="">
+					</button>
+					<button class="product-side-box" id="vrFilter">
+						<p>Virtual Reality</p>
+						<img src="../../assets/vr-1.png" alt="">
+					</button>
+				</div>
+
+				<div class="product-promotion-banner">
+					<div class="product-promotion-text-bx">
+						<p class="product-promotion-subtitle">GADGETS</p>
+						<p class="product-promotion-title">Xerich Smart Watch</p>
+						<p class="product-promotion-subtitle">- 35% OFF</p>
+					</div>
+					<img src="../../assets/smartwatch-banner.png" alt="">
+				</div>
+			</div>
+			<div class="product-right-container">
+			<div class="top-section">
+				<p class="product-top-title">Produk</p>
+				<div class="filter-wrapper">
+					<button id="allProducts" class="button-filter active">Semua</button>
+					<button id="popularProducts" class="button-filter">Populer</button>
+					<button id="cheapestProducts" class="button-filter">Termurah</button>
+				</div>
+			</div>
+			<!-- card product akan di looping menggunakan js  -->
+			<div class="wrapper-products" id="wrapperProducts"></div>
+			<!-- end product -->
+			<button class="show-more" id="showMore">Lebih Banyak</button>
+		</div>
+		</div>
+	</section>
+	
+	<section class="footer-section ">
+		<div class="footer-container">
+			<div class="footer-content">
+				<p class="website-name">Xperience.</p>
+				<p class="footer-text">Dapatkan update produk terbaru dari kami.</p>
+				<div class="subs-field">
+					<input type="email" placeholder="Email" id="email" name="email" required>
+					<div class="subs-btn" id="subsBtn">
+						<i id="right" class="bx bx-chevron-right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Tentang</p>
+				<div class="footer-links">
+					<a href="../../index.html">
+						<p>Beranda</p>
+					</a>
+					<a href="../../index.html#about-section">
+						<p>Tentang</p>
+					</a>
+					<a href="../../index.html#product-section">
+						<p>Produk</p>
+					</a>
+					<a href="../../index.html#faq-section">
+						<p>FAQ</p>
+					</a>
+					<a href="../../index.html#contact-section">
+						<p>Kontak</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Halaman Detail</p>
+				<div class="footer-links">
+					<a href="../../index.html">
+						<p>Beranda</p>
+					</a>
+					<a href="#">
+						<p>Belanja</p>
+					</a>
+					<a href="../cart/cart.html">
+						<p>Keranjang</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Kontak</p>
+				<div class="footer-links">
+					<a href="mailto:halo@mediaku.idn">
+						<p>halo@xperience.idn</p>
+					</a>
+					<p>+62 813 4482 9209</p>
+					<p>Jln. Gajah Mada, Bandung</p>
+				</div>
+			</div>
+		</div>
+		<p class="copyright"
+			style="position:absolute;bottom:20px;left: 0;width: 100%;text-align: center;opacity: 0.8;color: white;font-weight: 500;font-size: 14px;">
+			Copyright © <span>Xperience</span> | Designed by <span>Bocah TI.</span></p>
+	</section>
+	
+</body>
+<script src="product.js"></script>
+<script src="../../navbar.js"></script>
+
+</html>

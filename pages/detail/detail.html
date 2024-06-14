@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="detail.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+		<link rel="shortcut icon" href="../../assets/logo.svg" />
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<title id="detail-title">Detail Produk</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=a5pF4EW585QFinF2WwPa2Gy815Oa70iMNO7wv2ImjtZEVpC2ygyKgC4fpwC3ZJuOkFmzESjx-gN0zFo9Q5Dk-aQcH5zuXLHLHONly4UWtu5BFRc-eBB40Hi4XrnX_kc5" charset="UTF-8"></script></head>
+
+<body>
+	<!-- loader -->
+	<div id="loader" class="loading-loader hidden">
+		<div class="load">
+			<div class="spinner"></div>
+		</div>
+	</div>
+<!-- loader end -->
+
+
+
+	<!-- navbar -->
+	<nav class="header">
+		<div class="container">
+
+			<h1 class="logo">X<span>perience</span></h1>
+
+			<ul class="navbar">
+				<li><a href="../../index.html" class="nav-link ">Home</a></li>
+				<li><a href="#" class="nav-link active">Product <span></span></a></li>
+				<li><a href="../cart/cart.html" class="nav-link">Cart</a></li>
+				<li class="wrapper-button">
+					<a href="../pages/cart/cart.html">
+						<div class="button cart-button-menu"><i class='bx bxs-cart'></i></div>
+					</a>
+					<a href="../pages/login/login.html?show=register">
+						<div class="button button1">
+							Daftar
+						</div>
+					</a>
+					<a href="../pages/login/login.html?show=login">
+						<div class="button button2">
+							Masuk
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<i class="bx bx-menu" id="menu-icon"></i>
+
+			<div class="wrapper-button-primary">
+				<a href="../cart/cart.html">
+					<div class="cart-button sticky-cart"><i class='bx bxs-cart'></i></div>
+				</a>
+				<a href="../login/login.html?show=register">
+					<div class="button sticky-log">
+						Daftar
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</nav>
+	<!-- navbar end -->
+
+	<div class="modal hidden" id="modal">
+		<div class="card-modal">
+			<div class="wrapper" id="checkModal">
+				<img src="../../assets/modal-check.svg" alt="">
+				<h1>Berhasil</h1>
+				<p>Barang mu telah dimasukkan ke keranjang</p>
+				<button id="closeButton"><i class='bx bx-x'></i></button>
+				<a href="../cart/cart.html"><button>Lihat <i class='bx bx-cart'></i></button></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal hidden" id="modal">
+		<div class="card-modal">
+			<div class="wrapper hidden" id="decisionModal">
+				<img src="../../assets/decision.svg" alt="">
+				<h1>Konfirmasi Pembayaran</h1>
+				<p>Kamu akan melakukan pembayaran barang mu. Kamu yakin?</p>
+				<div class="wrapper-button">
+					<button id="noModal">Tidak, Batalkan.</button>
+					<button id="yesModal">ya, Lanjutkan!</button>
+				</div>
+			</div>
+			<div class="wrapper hidden" id="failedModal">
+				<img src="../../assets/cross.svg" alt="">
+				<h1>Pembayaran Gagal</h1>
+				<p>Terjadi kesalahan saat proses pembayaran</p>
+				<button id="closeModal">Tutup</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper-card">
+		<div class="card">
+			<div class="right">
+				<div class="img-box">
+					<!-- image dynamic with array  -->
+					<img id="imgSrc" src="" alt="">
+					<img class="radial" src="../../assets/radial.png" alt="">
+				</div>
+			</div>
+
+			<div class="left">
+				<div class="top">
+					<!-- automatic changes the name with id -->
+					<h1 id="nameProduct"></h1>
+
+					<!-- dom changes when the array data have a value will change the i to bxs-stars -->
+					<div class="wrapper-review">
+						<div id="starRatings" class="star-ratings">
+							<i class='bx bx-star'></i>
+							<i class='bx bx-star'></i>
+							<i class='bx bx-star'></i>
+							<i class='bx bx-star'></i>
+							<i class='bx bx-star'></i>
+						</div>
+						<div class="review">
+							<span id="review"></span>
+							<span> Ulasan</span>
+						</div>
+					</div>
+
+					<div class="prices">
+						<span id="originalPrice"></span>
+						<span id="discountedPrice"></span>
+					</div>
+
+					<div class="tags-wrapper">
+						<p>Tag :</p>
+						<ul id="tags" class="tags"></ul>
+					</div>
+				</div>
+				<div class="bot">
+
+					<div class="desc">
+						<p>Deskripsi Produk</p>
+						<span id="description"></span>
+					</div>
+
+					<div class="quantity-wrapper">
+						<div class="quantity-button">
+							<button id="decreaseQuantity">-</button>
+							<span id="quantity">1</span>
+							<button id="increaseQuantity">+</button>
+						</div>
+						<span>
+							Tersisa 200+
+						</span>
+					</div>
+
+					<div class="wrapper-button">
+						<button id="addToChart" class="bg-white"><span>Add to cart</span><i class='bx bx-cart'></i></button>
+						<button id="wishList"><i id="heart" class='bx bx-heart'></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="footer-section ">
+		<div class="footer-container">
+			<div class="footer-content">
+				<p class="website-name">Xperience.</p>
+				<p class="footer-text">Dapatkan update produk terbaru dari kami.</p>
+				<div class="subs-field">
+					<input type="email" placeholder="Email" id="email" name="email" required>
+					<div class="subs-btn" id="subsBtn">
+						<i id="right" class="bx bx-chevron-right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Tentang</p>
+				<div class="footer-links">
+					<a href="../../index.html">
+						<p>Beranda</p>
+					</a>
+					<a href="../../index.html#about-section">
+						<p>Tentang</p>
+					</a>
+					<a href="../../index.html#product-section">
+						<p>Produk</p>
+					</a>
+					<a href="../../index.html#faq-section">
+						<p>FAQ</p>
+					</a>
+					<a href="../../index.html#contact-section">
+						<p>Kontak</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Halaman Detail</p>
+				<div class="footer-links">
+					<a href="../../index.html">
+						<p>Beranda</p>
+					</a>
+					<a href="#">
+						<p>Belanja</p>
+					</a>
+					<a href="../cart/cart.html">
+						<p>Keranjang</p>
+					</a>
+				</div>
+			</div>
+			<div class="footer-content">
+				<p class="website-name">Kontak</p>
+				<div class="footer-links">
+					<a href="mailto:halo@mediaku.idn">
+						<p>halo@xperience.idn</p>
+					</a>
+					<p>+62 813 4482 9209</p>
+					<p>Jln. Gajah Mada, Bandung</p>
+				</div>
+			</div>
+		</div>
+		<p class="copyright"
+			style="position:absolute;bottom:20px;left: 0;width: 100%;text-align: center;opacity: 0.8;color: white;font-weight: 500;font-size: 14px;">
+			Copyright © <span>Xperience</span> | Designed by <span>Bocah TI.</span></p>
+	</section>
+
+</body>
+<script src="detail.js"></script>
+<script src="../../navbar.js"></script>
+
+</html>

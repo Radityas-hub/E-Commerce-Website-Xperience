@@ -1,0 +1,350 @@
+:root {
+	--primary: #f3f3f3;
+	--blue: #9969FF;
+	--blue2: #007AFF;
+	--blue3: #6710D9;
+	--white: #fff;
+	--text: black;
+	--f5: #f5f5f5;
+	--full: 100%;
+	--half: 50%;
+	--container: 90%;
+	--radius-1: 10px;
+	--radius-2: 20px;
+	--radius-3: 40px;
+	--radius-4: 60px;
+	--rounded: 50%;
+	--screen: 100vh;
+	--console: 1px solid;
+	--textinputfieldcolor: #f0f1f8;
+	--pcolor: rgba(0, 0, 0, 0.60);
+}
+
+* {
+	font-family: 'Montserrat';
+}
+
+body {
+	display: grid;
+	background-color: var(--primary);
+	place-items: center;
+	padding: 2rem 1rem;
+	overflow-x: hidden;
+}
+
+body.load-focus {
+	overflow: hidden !important;
+}
+
+.loading-loader {
+	height: var(--screen);
+	width: var(--full);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: var(--primary);
+	display: grid;
+	place-items: center;
+}
+
+.loading-loader .load {
+	max-height: 6rem;
+	height: var(--full);
+	display: grid;
+	place-items: center;
+	border-radius: var(--radius-2);
+	aspect-ratio: 1/1;
+	background-color: var(--blue3);
+}
+
+.loading-loader .spinner {
+	width: 50px;
+	aspect-ratio: 1/1;
+	--c: radial-gradient(farthest-side, var(--white) 92%, #0000);
+	background: var(--c) 50% 0,
+		var(--c) 50% 100%,
+		var(--c) 100% 50%,
+		var(--c) 0 50%;
+	background-size: 12.4px 12.4px;
+	background-repeat: no-repeat;
+	animation: spinner-kh173p 1s infinite;
+}
+
+@keyframes spinner-kh173p {
+	to {
+		transform: rotate(.5turn);
+	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+.card {
+	max-width: 1200px;
+	background-color: var(--white);
+	width: var(--full);
+	min-height: 43rem;
+	height: var(--container);
+	display: flex;
+	padding: 1.5rem 3rem 1.5rem 2rem;
+	border-radius: var(--radius-4);
+}
+
+.card .left {
+	width: var(--half);
+	display: grid;
+	place-items: center;
+	background-color: var(--blue3);
+	border-radius: var(--radius-3);
+}
+
+.card .right {
+	width: var(--half);
+	padding: 1rem 1rem 1.5rem 2rem;
+}
+
+.card .left img {
+	max-width: 33rem;
+	width: var(--full);
+	aspect-ratio: 1/1;
+}
+
+.card form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 4rem;
+}
+
+.card .right .logo {
+	font-size: 1.8rem;
+	color: var(--blue3);
+	font-weight: 600;
+}
+
+.card form h1 {
+	font-size: 1.8rem;
+	font-weight: 700;
+	padding-bottom: 1rem;
+}
+
+.card form label {
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding-top: 1.4rem;
+}
+
+.card form .email-input {
+	background-color: var(--textinputfieldcolor);
+	border-radius: var(--radius-1);
+	outline: none;
+	border: none;
+	padding: 1rem 2rem 1rem 1rem;
+	margin-top: 1rem;
+}
+
+.card form .name input {
+	background-color: var(--textinputfieldcolor);
+	border-radius: var(--radius-1);
+	outline: none;
+	border: none;
+	padding: 1rem 2rem 1rem 1rem;
+	margin-top: 1rem;
+}
+
+.card .name {
+	display: flex;
+	width: var(--full);
+	align-items: center;
+	column-gap: 10px;
+}
+
+.card .name input {
+	width: var(--half);
+}
+
+
+
+.card .password-field {
+	background-color: var(--textinputfieldcolor);
+	border-radius: var(--radius-1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3rem;
+	padding: 0 1rem !important;
+	margin-top: 1rem;
+}
+
+.card .password-field .password-input {
+	height: 3rem;
+	width: 90%;
+	outline: none;
+	background-color: transparent;
+	border: none;
+}
+
+.toggle-password {
+	border: none;
+	outline: none;
+	background-color: transparent !important;
+}
+
+.card form button {
+	outline: none;
+	width: fit-content;
+	background-color: var(--blue3);
+	border-radius: var(--radius-1);
+	border: none;
+	margin: 1.4rem 0;
+}
+
+.card form button:hover {
+	opacity: .8;
+}
+
+.card form button span {
+	padding: 1rem 3rem;
+	display: block;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.card form p {
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--pcolor);
+}
+
+
+.card form p a {
+	display: inline-block;
+	color: var(--blue3);
+}
+
+.card .wrapper-button {
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+	padding-bottom: 1rem;
+}
+
+.card .wrapper-button h6 {
+	display: block;
+	padding: 1rem 2rem;
+	font-size: .9rem;
+	font-weight: 600;
+}
+
+.card .wrapper-button .button {
+	background-color: var(--textinputfieldcolor);
+	border-radius: var(--radius-1);
+}
+
+.card .wrapper-button .button a {
+	display: block;
+	padding: .5rem 1.5rem;
+}
+
+.card .wrapper-button .button img {
+	width: 2rem !important;
+	aspect-ratio: 1/1;
+}
+
+@media (max-width: 884px) {
+	.card .left {
+		display: none;
+	}
+
+	.card {
+		display: grid;
+		place-items: center;
+		min-height: 70vh;
+		height: fit-content;
+		padding: 1.5rem;
+	}
+
+	.card .right {
+		width: var(--full);
+		padding: 1.5rem;
+	}
+
+	.card .right form {
+		width: var(--full);
+	}
+}
+
+@media (max-width:500px) {
+	body {
+		padding: .5rem !important;
+	}
+
+	.card {
+		width: 100% !important;
+		border-radius: var(--radius-2) !important;
+	}
+
+	.card .name {
+		flex-direction: column;
+	}
+
+	.card .name input {
+		width: var(--full);
+	}
+
+	.card form button {
+		width: var(--full) !important;
+	}
+
+	.card .wrapper-button {
+		margin-top: 1.4rem;
+	}
+
+	.card .wrapper-button #create-account {
+		grid-area: primary;
+		margin: unset !important;
+		width: var(--full) !important;
+	}
+
+	.card .wrapper-button h6 {
+		grid-area: or;
+		padding: unset;
+		width: var(--full);
+		text-align: center;
+	}
+
+
+	.card .wrapper-button .button:first-child {
+		grid-area: google;
+	}
+
+	.card .wrapper-button .button:last-child {
+		grid-area: facebook;
+	}
+
+	.card .wrapper-button .button a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.card form p {
+		text-align: center;
+	}
+
+	.card form .wrapper-button {
+		display: grid !important;
+		row-gap: 1rem;
+		grid-template-columns: repeat(2, 1fr);
+		width: var(--full);
+		justify-content: center;
+		grid-template-areas:
+			'primary primary'
+			'or or'
+			'google facebook';
+	}
+
+}

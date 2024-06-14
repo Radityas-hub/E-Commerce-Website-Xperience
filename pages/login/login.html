@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Page - Xperience</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/global.css">
+	<link rel="stylesheet" href="login.css">
+	<link rel="shortcut icon" href="../../assets/logo.svg" />
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=cRbo8LXy7HrFBh-8YiZncnTYai6nRafxZqDhdQi4ddcBoTLIGx_Kp5ZThKl26mECDojaBnAgWUm2vRum8hP6sUB9v7DE3kZA1LANw8vGaM48VV5KvlqkZkF13vU_EGFU" charset="UTF-8"></script></head>
+
+<body>
+
+	<div id="loader" class="loading-loader hidden">
+		<div class="load">
+			<div class="spinner"></div>
+		</div>
+	</div>
+
+	<div class="card">
+
+		<div class="left">
+			<img src="../../assets/login.png" alt="">
+		</div>
+
+		<div class="right">
+			<h1 class="logo">Xperience</h1>
+			<form id="signUp">
+				<h1>Buat Akun</h1>
+				<label>Nama</label>
+				<div class="name">
+					<input type="text" placeholder="Nama Depan">
+					<input type="text" placeholder="Nama Belakang">
+				</div>
+				<label>Email</label>
+				<input class="email-input" type="email" placeholder="Email">
+				<label for="password">Password</label>
+				<div class="password-field">
+					<input class="password-input" id="passwordField" type="password" placeholder="Masukan Password">
+					<button class="toggle-password" id="togglePassword">
+						<i id="iconsToggle" class='bx bx-show-alt'></i>
+					</button>
+				</div>
+
+				<button id="createAccount"><span>Buat Akun</span></button>
+				<p>Sudah punya akun? <a href="" id="linkLogin">Masuk</a></p>
+			</form>
+
+			<form id="signIn" class="hidden">
+				<h1>Masukkan Akun</h1>
+				<label>Email</label>
+				<input class="email-input" type="email" placeholder="Email">
+				<label for="password">Password</label>
+				<div class="password-field">
+					<input class="password-input" id="passwordFieldLogin" type="password" placeholder="Masukan Password">
+					<button class="toggle-password" id="togglePasswordLogin">
+						<i id="iconsToggleLogin" class='bx bx-show-alt'></i>
+					</button>
+				</div>
+				<div class="wrapper-button">
+					<button id="loginAccount"><span>Masuk</span></button>
+					<h6>Atau</h6>
+					<div class="button">
+						<a href=""><img src="../../assets/google.svg" alt=""></a>
+					</div>
+					<div class="button">
+						<a href=""><img src="../../assets/facebook.svg" alt=""></a>
+					</div>
+				</div>
+				<p>Belum punya akun? <a href="" id="linkRegister">Buat Akun</a></p>
+			</form>
+		</div>
+
+	</div>
+</body>
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function () {
+		const loader = document.getElementById("loader");
+		const formRegister = document.getElementById("signUp");
+		const formLogin = document.getElementById("signIn");
+		const register = document.getElementById("linkRegister");
+		const login = document.getElementById("linkLogin");
+		const passwordField = document.getElementById("passwordField");
+		const passwordFieldLogin = document.getElementById("passwordFieldLogin");
+		const togglePassword = document.getElementById("togglePassword");
+		const togglePasswordLogin = document.getElementById("togglePasswordLogin");
+		const iconsToggle = document.getElementById("iconsToggle");
+		const iconsToggleLogin = document.getElementById("iconsToggleLogin");
+
+		function loading() {
+			loader.classList.remove("hidden");
+			document.body.classList.add("load-focus");
+
+			setTimeout(() => {
+				loader.classList.add("hidden");
+				document.body.classList.remove("load-focus");
+			}, 1000);
+
+		}
+
+		togglePassword.addEventListener("click", function (e) {
+			e.preventDefault();
+			if (passwordField.type === 'password') {
+				passwordField.type = 'text';
+				iconsToggle.classList.remove("bx-show-alt");
+				iconsToggle.classList.add("bx-hide");
+			} else {
+				passwordField.type = 'password';
+				iconsToggle.classList.remove("bx-hide");
+				iconsToggle.classList.add("bx-show-alt");
+			}
+		});
+
+		togglePasswordLogin.addEventListener("click", function (e) {
+			e.preventDefault();
+			if (passwordFieldLogin.type === 'password') {
+				passwordFieldLogin.type = 'text';
+				iconsToggleLogin.classList.remove("bx-show-alt");
+				iconsToggleLogin.classList.add("bx-hide");
+			} else {
+				passwordFieldLogin.type = 'password';
+				iconsToggleLogin.classList.remove("bx-hide");
+				iconsToggleLogin.classList.add("bx-show-alt");
+			}
+		});
+
+
+		// Function to toggle forms and loader
+		function toggleFormsAndLoader(formToShow) {
+
+			loading();
+			formRegister.classList.add("hidden");
+			formLogin.classList.add("hidden");
+			formToShow.classList.remove("hidden");
+		}
+
+		// Check the URL parameter and show the corresponding form
+		const urlParams = new URLSearchParams(window.location.search);
+		const showForm = urlParams.get('show');
+
+		if (showForm === 'register') {
+			toggleFormsAndLoader(formRegister);
+		} else if (showForm === 'login') {
+			toggleFormsAndLoader(formLogin);
+		}
+
+		// Add click event listeners
+		register.addEventListener("click", (e) => {
+			e.preventDefault();
+			toggleFormsAndLoader(formRegister);
+		});
+
+		login.addEventListener("click", (e) => {
+			e.preventDefault();
+			toggleFormsAndLoader(formLogin);
+		});
+	});
+</script>
+
+</html>
